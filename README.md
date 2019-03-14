@@ -24,20 +24,20 @@ Then add those lines :<br>
     <br>
 Save and reboot your VM<br>
 <br>
-7 - *INSTALL SSH*<br>
-On your VM, do the following :
-    - mkdir ~/.ssh
-    - cd .ssh
-    - touch authorized_keys
-    - chmod 0600 authorized_keys
+7 - <b>*INSTALL SSH*</b><br>
+On your VM, do the following :<br>
+    - mkdir ~/.ssh<br>
+    - cd .ssh<br>
+    - touch authorized_keys<br>
+    - chmod 0600 authorized_keys<br>
 Go to your Mac terminal and type : ssh-keygen<br>
-Try to connect first time to your VM through terminal : 
-    - ssh toto@10.13.1.63 -p 2222
-Once connected exit
-Copy your ssh key to debian server using :
-    - ssh-copy-id -i ~/.ssh/id_rsa.pub toto@10.12.1.63 -p 2222
-
-8 - * AUTHORIZE PUBLICKEY ACCESS & PREVENT SOME DDOS ATTACKS *
+Try to connect first time to your VM through terminal : <br>
+    - ssh toto@10.13.1.63 -p 2222<br>
+Once connected exit.<br>
+Copy your ssh key to debian server using :<br>
+    - ssh-copy-id -i ~/.ssh/id_rsa.pub toto@10.12.1.63 -p 2222<br>
+<br>
+8 - <b>* AUTHORIZE PUBLICKEY ACCESS & PREVENT SOME DDOS ATTACKS *</b><br>
 Modify your /etc/ssh/sshd_config to include at least the following :<br>
 <br>
 Port 2222<br>
