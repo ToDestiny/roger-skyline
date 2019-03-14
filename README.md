@@ -1,9 +1,9 @@
 # roger-skyline
 42 - Initiation project for System and Network Administrator
-
-
-Correction :
-
+<br>
+<br>
+Correction :<br>
+<br>
 1 - Launch create-vm.sh (Automation Script) <br>
 2 - Accept network settings and setup VM (on VirtualBox)<br>
 3 - After installing(with only SSH and Basic setup), launch VM <br>
@@ -15,4 +15,20 @@ Then add those lines :<br>
     netmask : 255.255.255.252 (subject ask for static netmask of 30)<br>
     gateway : 10.13.254.254<br>
 Save and reboot your VM<br>
+7 - Modify your /etc/ssh/sshd_config to include at least the following :<br>
+<br>
+Port 2222<br>
+PermitRootLogin no<br>
+PubkeyAuthentication yes<br>
+AuthorizedKeysFile      .ssh/authorized_keys<br>
+PasswordAuthentication no<br>
+PermitEmptyPasswords no<br>
+ChallengeResponseAuthentication no<br>
+UsePAM yes<br>
+X11Forwarding yes<br>
+PrintMotd no<br>
+AcceptEnv LANG LC_*<br>
+Subsystem       sftp    /usr/lib/openssh/sftp-server<br>
+MaxAuthTries 1<br>
+<br>
 7 - Go to your Mac terminal and type : ssh-keygen<br>
