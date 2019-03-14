@@ -4,6 +4,7 @@
 <br>
 Correction :<br>
 <br>
+<b>*INSTALL VM ON VIRTUALBOX*</b><br>
 1 - Launch create-vm.sh (Automation Script) <br>
 <br>
 2 - Accept network settings and setup VM (on VirtualBox)<br>
