@@ -40,4 +40,10 @@ AcceptEnv LANG LC_*<br>
 Subsystem       sftp    /usr/lib/openssh/sftp-server<br>
 MaxAuthTries 1<br>
 <br>
-7 - Go to your Mac terminal and type : ssh-keygen<br>
+Save and reboot your VM<br>
+8 - On your VM, do the following :
+    - mkdir ~/.ssh
+    - cd .ssh
+    - touch authorized_keys
+    - chmod 0600 authorized_keys
+9 - Go to your Mac terminal and type : ssh-keygen<br>
