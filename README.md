@@ -56,12 +56,13 @@ Subsystem       sftp    /usr/lib/openssh/sftp-server<br>
 MaxAuthTries 1<br>
 <br>
 Save and reboot your VM<br>
-Connect from Mac terminal and accept.
-
-9 - *DDOS ATTACKS AND DEFENDING OPEN PORTS*
-    - Implement the rules on /etc/iptables (or whatever the name of your script for iptables)
-
-10 - *Disable non-needed services*
-    - Tocheck enabled services : systemctl list-unit-files | grep enabled
-    - Disable the one not needed : - Apache2 (if installed) / 
+Connect from Mac terminal and accept.<br>
+<br>
+9 - *DDOS ATTACKS AND DEFENDING OPEN PORTS*<br>
+    - Implement the rules on /etc/iptables (or whatever the name of your script for iptables)<br>
+<br>
+10 - *Disable non-needed services*<br>
+    - Tocheck enabled services : systemctl list-unit-files | grep enabled<br>
+    - Disable the one not needed : - Apache2 (if installed) / apt-daily.timer and apt-daily-upgrade.timer<br>
+    
 
