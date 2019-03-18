@@ -58,7 +58,8 @@ MaxAuthTries 1<br>
 Save and reboot your VM<br>
 Connect from Mac terminal and accept.
 
-9 - 
+9 - *DDOS ATTACKS AND DEFENDING OPEN PORTS*
+    - Implement the rules on /etc/iptables (or whatever the name of your script for iptables)
 
 
 
