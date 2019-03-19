@@ -68,4 +68,5 @@ Connect from Mac terminal and accept.<br>
 <br>
 11 - *Crontab Script for auto-update*<br>
     - go to /etc/crontab and edit the following the proper crontab rules
-        -> 00 4 * * 1 root apt update
+        -> 00 4 * * 1 root apt update > /var/log/update-script.log && apt upgrade -y >> /var/log/update-script.log
+        -> @reboot    root apt update > /var/log/update-script.log && apt upgrade -y >> /var/log/update-script.log
