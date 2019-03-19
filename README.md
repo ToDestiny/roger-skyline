@@ -64,5 +64,5 @@ Connect from Mac terminal and accept.<br>
 10 - *Disable non-needed services*<br>
     - Tocheck enabled services : systemctl list-unit-files | grep enabled<br>
     - Disable the one not needed : - Apache2 (if installed) / apt-daily.timer and apt-daily-upgrade.timer<br>
-    
+        -> systemctl list-unit-files | grep enabled to check which services are enabled
 
