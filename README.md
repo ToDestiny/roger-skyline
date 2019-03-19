@@ -64,5 +64,8 @@ Connect from Mac terminal and accept.<br>
 10 - *Disable non-needed services*<br>
     - Tocheck enabled services : systemctl list-unit-files | grep enabled<br>
     - Disable the one not needed : - Apache2 (if installed) / apt-daily.timer and apt-daily-upgrade.timer<br>
-        -> systemctl list-unit-files | grep enabled to check which services are enabled
-
+        -> systemctl list-unit-files | grep enabled to check which services are enabled<br>
+<br>
+11 - *Crontab Script for auto-update*<br>
+    - go to /etc/crontab and edit the following the proper crontab rules
+        -> 00 4 * * 1 root apt update
