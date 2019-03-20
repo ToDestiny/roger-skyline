@@ -13,7 +13,7 @@ Correction :<br>
 <br>
 4 - Edit with nano this file : nano etc/apt/sources.list . Comment the cdrom part.<br>
 <br>
-5 - Command : apt-get update && apt-get install vim <br>
+5 - Command : apt-get update && apt-get install vim portsentry mailutils<br>
 <br>
 6 - Command : vim /etc/network/interfaces to change the primary network from dhcp to static.<br>
 <br>
@@ -67,6 +67,28 @@ Connect from Mac terminal and accept.<br>
         -> systemctl list-unit-files | grep enabled to check which services are enabled<br>
 <br>
 11 - *Crontab Script for auto-update*<br>
-    - go to /etc/crontab and edit the following the proper crontab rules
-        -> 00 4 * * 1 root apt update > /var/log/update-script.log && apt upgrade -y >> /var/log/update-script.log
-        -> @reboot    root apt update > /var/log/update-script.log && apt upgrade -y >> /var/log/update-script.log
+    - go to /etc/crontab and edit the following the proper crontab rules<br>
+        -> 00 4 * * 1 root apt update > /var/log/update-script.log && apt upgrade -y >> /var/log/update-script.log<br>
+        -> @reboot    root apt update > /var/log/update-script.log && apt upgrade -y >> /var/log/update-script.log<br>
+        
+12 - *Crontab Script for any modification of crontab*<br>
+    - Create this file : /etc/modifcron<br>
+#!/bin/sh
+Check=/etc/cron.check
+Cron=/etc/crontab
+
+if [ ! -f $Check ]
+then
+	cp $Cron $Check
+	exit 0
+fi
+
+A=`sudo md5sum $Check 2>&1 | awk '{ print $1 }'`
+B=`sudo md5sum $Cron 2>&1 | awk '{ print $1 }'`
+
+if [ "$A" != "$B" ]
+then
+	cp $Cron $Check
+	echo "Crontab file has been modified." | mail -s "Crontab modification" root@debian
+fi
+        
