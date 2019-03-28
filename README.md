@@ -45,8 +45,6 @@ Port 2222<br>
 PermitRootLogin no<br>
 PubkeyAuthentication yes<br>
 AuthorizedKeysFile      .ssh/authorized_keys<br>
-PasswordAuthentication no<br>
-PermitEmptyPasswords no<br>
 ChallengeResponseAuthentication no<br>
 UsePAM yes<br>
 X11Forwarding yes<br>
